@@ -1,28 +1,32 @@
 import { createClient } from '@supabase/supabase-js'
-import { cookies } from 'next/headers'
+import { headers } from 'next/headers'
 
 export function createClientServer() {
-  const cookieStore = cookies()
+  const headersList = headers()
+  const authHeader = headersList.get('authorization')
 
-  // For Next.js App Router API routes, we need to handle cookies manually
-  // Note: This is a simplified version. For production, consider using @supabase/ssr
-  return createClient(
+  // Create Supabase client with auth header if present
+  const supabase = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
       auth: {
-        persistSession: false, // We'll handle sessions via cookies manually
+        persistSession: false,
         autoRefreshToken: false,
-      },
-      global: {
-        headers: {
-          // Forward auth cookies if present
-          Authorization: cookieStore.get('sb-access-token')?.value 
-            ? `Bearer ${cookieStore.get('sb-access-token')?.value}` 
-            : '',
-        },
       },
     }
   )
+
+  // If auth header is present, set it on the client
+  if (authHeader) {
+    supabase.auth.setSession({
+      access_token: authHeader.replace('Bearer ', ''),
+      refresh_token: '',
+    }).catch(() => {
+      // Ignore errors if token is invalid
+    })
+  }
+
+  return supabase
 }
 
