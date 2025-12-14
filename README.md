@@ -1,73 +1,98 @@
-# Welcome to your Lovable project
+# BMDB - The Database for Student & Independent Filmmakers
 
-## Project info
+BMDB is the definitive database for student and independent cinema. Showcase your work, build your filmography, and get discovered by the industry.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Project Overview
 
-## How can I edit this code?
+BMDB consists of:
+- **Frontend**: React + Vite + TypeScript + shadcn/ui (this directory)
+- **Backend**: Next.js + Supabase (see `/backend` directory)
 
-There are several ways of editing your application.
+## Features
 
-**Use Lovable**
+- Project management and publishing
+- Credit system with verification workflows
+- Community ratings (0-10 scale) and comments
+- Discovery features (Trending, Top Rated, New & Notable)
+- User profiles and filmography
+- Project membership and admin controls
+- Reporting and moderation tools
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+### Frontend
+- Vite
+- React 18
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
+- React Router
 
-**Use your preferred IDE**
+### Backend
+- Next.js (App Router)
+- Supabase (PostgreSQL, Auth, Storage)
+- Row Level Security (RLS)
+- Edge Functions / RPC
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Getting Started
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Frontend Development
 
-Follow these steps:
+```bash
+# Install dependencies
+npm install
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
-**Edit a file directly in GitHub**
+### Backend Setup
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+See the [backend README](./backend/README.md) for detailed setup instructions.
 
-**Use GitHub Codespaces**
+## Project Structure
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```
+BMDB/
+├── backend/          # Next.js backend with Supabase integration
+├── public/           # Static assets
+├── src/              # Frontend React source code
+│   ├── components/   # React components
+│   ├── pages/        # Page components
+│   ├── lib/          # Utilities and helpers
+│   └── types/        # TypeScript type definitions
+└── package.json
+```
 
-## What technologies are used for this project?
+## Environment Variables
 
-This project is built with:
+### Frontend
+Create a `.env` file in the root directory:
+```
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Backend
+See backend documentation for required environment variables.
 
-## How can I deploy this project?
+## Contributing
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+1. Follow TypeScript best practices
+2. Use ESLint for code quality
+3. Write clear commit messages
+4. Test thoroughly before submitting PRs
 
-## Can I connect a custom domain to my Lovable project?
+## License
 
-Yes, you can!
+MIT License
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## Support
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+For issues and questions, please open an issue on GitHub.
