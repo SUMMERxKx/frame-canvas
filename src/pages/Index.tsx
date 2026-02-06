@@ -21,6 +21,15 @@ export default function Index() {
 
   return (
     <Layout>
+      {/* Coming Soon Banner */}
+      <div className="bg-primary/10 border-b border-primary/20 py-3">
+        <div className="container mx-auto px-6 lg:px-12 text-center">
+          <p className="text-sm font-medium text-primary">
+            🎬 Coming Soon - BMDB is currently in development
+          </p>
+        </div>
+      </div>
+
       {/* Hero Section */}
       <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
         {/* Background */}

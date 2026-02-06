@@ -1,98 +1,60 @@
-# BMDB - The Database for Student & Independent Filmmakers
+# BMDB
 
-BMDB is the definitive database for student and independent cinema. Showcase your work, build your filmography, and get discovered by the industry.
+Database for student and indie filmmakers. Still building it out.
 
-## Project Overview
+## What is this?
 
-BMDB consists of:
-- **Frontend**: React + Vite + TypeScript + shadcn/ui (this directory)
-- **Backend**: Next.js + Supabase (see `/backend` directory)
+BMDB lets filmmakers showcase their work and build their filmography. Think IMDb but for student and independent projects.
 
-## Features
+**Status: Coming soon** - still in development
 
-- Project management and publishing
-- Credit system with verification workflows
-- Community ratings (0-10 scale) and comments
-- Discovery features (Trending, Top Rated, New & Notable)
-- User profiles and filmography
-- Project membership and admin controls
-- Reporting and moderation tools
+## Tech
 
-## Tech Stack
+Frontend: React + Vite + TypeScript + shadcn/ui  
+Backend: Next.js + Supabase (check `/backend` folder)
 
-### Frontend
-- Vite
-- React 18
-- TypeScript
-- Tailwind CSS
-- shadcn/ui
-- React Router
-
-### Backend
-- Next.js (App Router)
-- Supabase (PostgreSQL, Auth, Storage)
-- Row Level Security (RLS)
-- Edge Functions / RPC
-
-## Getting Started
-
-### Frontend Development
+## Running it
 
 ```bash
-# Install dependencies
 npm install
-
-# Start development server
 npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
 ```
 
-### Backend Setup
+For backend setup, see the backend README.
 
-See the [backend README](./backend/README.md) for detailed setup instructions.
-
-## Project Structure
+## Project layout
 
 ```
 BMDB/
-├── backend/          # Next.js backend with Supabase integration
-├── public/           # Static assets
-├── src/              # Frontend React source code
-│   ├── components/   # React components
-│   ├── pages/        # Page components
-│   ├── lib/          # Utilities and helpers
-│   └── types/        # TypeScript type definitions
+├── backend/       # Next.js + Supabase
+├── public/        # Static files
+├── src/           # React frontend
+│   ├── components/
+│   ├── pages/
+│   ├── lib/
+│   └── types/
 └── package.json
 ```
 
-## Environment Variables
+## Env vars
 
-### Frontend
-Create a `.env` file in the root directory:
+Create `.env` in the root:
 ```
-VITE_SUPABASE_URL=your_supabase_url
-VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+VITE_SUPABASE_URL=your_url
+VITE_SUPABASE_ANON_KEY=your_key
 ```
 
-### Backend
-See backend documentation for required environment variables.
+Backend needs its own env vars - check the backend README.
+
+## Features (planned)
+
+- Project pages and publishing
+- Credit system with verification
+- Ratings and comments
+- Discovery (trending, top rated, etc.)
+- User profiles
+- Admin stuff
 
 ## Contributing
 
-1. Follow TypeScript best practices
-2. Use ESLint for code quality
-3. Write clear commit messages
-4. Test thoroughly before submitting PRs
-
-## License
-
-MIT License
-
-## Support
-
-For issues and questions, please open an issue on GitHub.
+Just write clean code and test your changes. That's it.
